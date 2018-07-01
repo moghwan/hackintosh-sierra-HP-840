@@ -5,7 +5,7 @@ This is my working install guide for macOS sierra 10.12 on HP elitebook 840 G1, 
 * Installation
 * Post installation
 
-#Prepare USB installer
+# Prepare USB installer
 1. Download macOS Sierra from [hackintosh.zone](https://www.hackintosh.zone/file/1008-hackintosh-sierra/)
 1. Download [transmac trial](https://www.hackintosh.zone/file/1020-transmac-for-sierra/)
 1. Plug your USB drive into your computer, and open TransMac as Administrator
@@ -14,7 +14,7 @@ This is my working install guide for macOS sierra 10.12 on HP elitebook 840 G1, 
 1. Choose the file Hackintosh-Sierra-Zone.dmg you downloaded and proceed.
 1. Wait until finish then reboot to your bios.
 
-#BIOS settings
+# BIOS settings
 1. Reset bios settings to default
 1. Go to Advanced
     * Device configutation
@@ -26,7 +26,7 @@ This is my working install guide for macOS sierra 10.12 on HP elitebook 840 G1, 
 1. Verify if VT-D; VT-X are disabled and boot mode on UEFI (native recommended but no windows boot).
 1. Save and reboot.
 
-#Installation
+# Installation
 1. Boot using your USB drive (F9)
 1. Select your USB drive, named as “**Hackintosh Sierra Zone**”
 1. Wait until texts and apple logo disappear
@@ -64,15 +64,15 @@ This is my working install guide for macOS sierra 10.12 on HP elitebook 840 G1, 
 1. Continue
 1. The install process will take up to 30 minutes
 
-#Post installation
-###1. Boot from hard drive
+# Post installation
+### 1. Boot from hard drive
 1. Download and run [Hackintosh Vietnam Tool](https://drive.google.com/open?id=16ezQQVHtwdbxBkb3B8OtIbNKLLiNizGA) 
 1. Click continue, continue, continue, agree.
 1. Check Clover -> Install Clover UEFI.
 1. Continue, install and done.
 1. remove your bootable USB drive. now you're able to boot from hard drive.
 
-###2. Kexts installation (1/2)
+### 2.1 Kexts installation
 1. Run again **Hackintosh Vietnam Tool** 
 1. Choose these right settings:
     * Kexts -> System (check these)
@@ -96,13 +96,13 @@ This is my working install guide for macOS sierra 10.12 on HP elitebook 840 G1, 
         * MacIASL
 1. Then click continue -> install.
 
-###2. Kexts installation (2/2)
+### 2.2 Kexts installation
 1. Download these [essential kexts](https://drive.google.com/open?id=1J8kTbd6FmRWq_hR-TRmTE-QFJHpXtDtR)
 1. Open Kext Wizard & select **Installation** tab
 1. Browse and add downloaded kexts or just drag them to the window.
 1. Check **Backup Kexts** then click Install.
 1. Wait a minute and it's done.
 
-###3. Patch DSDT files
-#Tweaks
+### 3. Patch DSDT files
+# Tweaks
 
