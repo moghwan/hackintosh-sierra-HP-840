@@ -1,9 +1,9 @@
 This is my working install guide for macOS sierra 10.12 on HP elitebook 840 G1, i5(4300U), Intel HD 4400 (tested on both azerty/querty & 1600x900 / 1366x768 models)
 
-* Prepare USB installer
-* BIOS settings
-* Installation
-* Post installation
+* [Prepare USB installer](#prepare-usb-installer)
+* [BIOS settings](#bios-settings)
+* [Installation](#installation)
+* [Post installation](#post-installation)
 
 # Prepare USB installer
 1. Download macOS Sierra from [hackintosh.zone](https://www.hackintosh.zone/file/1008-hackintosh-sierra/)
@@ -104,5 +104,33 @@ This is my working install guide for macOS sierra 10.12 on HP elitebook 840 G1, 
 1. Wait a minute and it's done.
 
 ### 3. Patch DSDT files
-# Tweaks
+You will find the complete guide [here](https://www.tonymacx86.com/threads/guide-patching-laptop-dsdt-ssdts.152573/). there is also a great [video tutorial](https://www.youtube.com/watch?v=dgDaTr1pNaQ) but I'm only noting the main steps here below.
+1. Reboot your Hackintosh and go to Clover menu.
+1. Press **F4** key. Nothing will be shown at this point but this will extract original ACPI files so we can patch them. you'll find them in **EFI/Clover/ACPI/origin**.
+1. copy the **origin** folder to the desktop and rename it to **patched**. A backup is recommended.
+1. Delete duplicate SSDT files if there are. they have same sizes and you can determine them by bash command `ls -l SSDT*.aml`.
+1. Download [iasl](http://raw.github.com/RehabMan/Laptop-DSDT-Patch/master) to disassemble .aml files to .dsl files. copy the downloaded file to /usr/bin to have ease access in terminal: 
+```
+  cd ~/Downloads
+  unzip iasl.zip
+  sudo cp iasl /usr/bin
+```
+1. Download the file **refs.txt** present in this repo and place it to the **patched** directory.
+1. To do so, run this command : `iasl -da -dl -fe refs.txt DSDT.aml SSDT*.aml`
+1. Open MaciASL. go to preferences > sources > add :
+    * name : RehabMan Laptop
+    * url : http://raw.github.com/RehabMan/Laptop-DSDT-Patch/master
+4. Go to your **patched** folder and open DSDT.dsl file. it shoud be opened with MaciASL.
+4. click Patch icon in the top.
+4. now we will apply each patch described below to the DSDT file. you need to select the patch name (the left tree bar) and click patch then compile, it should be compiled without any errors (warnings aren't importants).
+    * RehabMan Laptop
+        * [audio] audio layout 12
+        * [bat] HP ProBook 4x0s G1
+        * [igpu] Haswell HD4400/HD4600/HD5000
+        * [sys] IRQ fix
+        * [sys] SMBUS Fix
+4. Once finishing go to File menu->save, then again File->save as-> DSDT.aml (file format: ACPI Machine Language Binary)
+4. For SSDT files you need just to compile files without errors. (open dsl file, compile, save, save as .aml) and done.
+4. now mount your EFI partition, and go to **EFI->CLOVER->ACPI->patched** and paste all the compiled **.aml** files.
+4. close and reboot. everything should work now.
 
