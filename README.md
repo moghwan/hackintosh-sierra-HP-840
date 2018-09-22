@@ -6,7 +6,7 @@ This is my working install guide for macOS sierra 10.12 on HP elitebook 840 G1, 
 * [Post installation](#post-installation)
 
 # Prepare USB installer
-1. Download macOS Sierra from [hackintosh.zone](https://www.hackintoshzone.com/files/file/1008-hackintosh-sierra/)
+1. Download macOS Sierra from [hackintoshzone.com](https://www.hackintoshzone.com/files/file/1008-hackintosh-sierra/)
 1. Download [transmac trial](https://www.hackintoshzone.com/files/file/1020-transmac-for-sierra/)
 1. Plug your USB drive into your computer, and open TransMac as Administrator
 1. Right click on your USB (sidebar at the right) and format disk for mac.
