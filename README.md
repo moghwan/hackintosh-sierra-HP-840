@@ -134,3 +134,6 @@ You will find the complete guide [here](https://www.tonymacx86.com/threads/guide
 4. now mount your EFI partition, and go to **EFI->CLOVER->ACPI->patched** and paste all the compiled **.aml** files.
 4. close and reboot. everything should work now.
 
+### 4. Getting Wi-Fi card working
+1. I ordered [this one](https://fr.aliexpress.com/item/for-HP-BroadCom-BCM943224HMS-BCM43224-half-MINI-PCI-E-Wlan-WIFI-Wireless-Card-582564-001-518434/32314592739.html) after research and it works right out of the box.
+2. After installation mount your EFI partition and open your **config.plist** with clover configurator and go to SMBIOS section and change it to **MacBook Air 5,2**. save and reboot. now It should work.
